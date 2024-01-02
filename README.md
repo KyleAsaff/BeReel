@@ -4,6 +4,8 @@
 
 # BeReel:
 
+Forked from https://github.com/theOneAndOnlyOne/BeReel and edited to make it more like 2022. Globals are stored in recap.py.
+
 Miss the Timelapse Recap feature from ReReal? Introducing BeReel. A Flask-based webtool that gives you a customized timelapse of your favourite BeReal memories. 
 
 ![Video Settings](https://github.com/theOneAndOnlyOne/BeReel/blob/main/static/images/BeReel_Video_Settings.png)
@@ -63,9 +65,5 @@ BeReel was developed as an open-source app and gathers information from an unoff
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-## Buy Me A Coffee!
-
-You like the work here? Feel free to buy me a coffee by following this [link](https://www.buymeacoffee.com/theoneandonlyone)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
