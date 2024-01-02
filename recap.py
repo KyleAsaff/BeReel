@@ -205,11 +205,12 @@ def generate_video(image_folder, output_path, frames_per_second, t_duration):
     new_normalized_durations = normalized_durations + end_duration
     new_normalized_durations[-1] = new_normalized_durations[-1]
 
+    if USE_MIN_FRAME_DURATION == True:
+        print("new normalized")
+        normalizations = [MIN_FRAME_DURATION if ele < MIN_FRAME_DURATION else ele for ele in new_normalized_durations]
+        new_normalized_durations = normalizations
+
     print(new_normalized_durations)
-
-    if USE_MIN_FRAME_DURATION:
-        new_normalized_durations = [MIN_FRAME_DURATION if ele < MIN_FRAME_DURATION else ele for ele in new_normalized_durations]
-
     part2 = ImageSequenceClip(images, durations=new_normalized_durations)
 
     # generate part 3
