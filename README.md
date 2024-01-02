@@ -2,7 +2,7 @@
 
 # Fork Note:
 
-Forked from https://github.com/theOneAndOnlyOne/BeReel and edited to make more like 2022. Globals are stored in `recap.py`. Once Authenticated, edit the globals and click the "2023 Recap" button.
+Forked from https://github.com/theOneAndOnlyOne/BeReel and edited to make more like 2022. Globals are stored in `recap.py`. Once Authenticated, edit the globals and click the "2023 Recap" button. If the fonts look wrong, you may have to install the fonts located in `static/fonts` to your computer's global fonts.
 
 ----------
 

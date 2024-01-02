@@ -5,10 +5,10 @@ import cv2
 from PIL import Image, ImageDraw, ImageFont
 
 # Path to BeReal Font
-FONT_PATH = rf"static{os.path.sep}fonts{os.path.sep}Inter-Bold.ttf"
+BEREAL_LOGO_FONT_PATH = rf"static{os.path.sep}fonts{os.path.sep}Inter-Bold.ttf"
 # Your BeReal Username
 BEREAL_USERNAME = "kyleasaff"
-# Duration of the Video
+# Duration of the Video (in seconds, to develop bezier_curve. resulting video may be longer if USE_MIN_FRAME_DURATION is set to True)
 BEREAL_VIDEO_DURATION = 45
 # Cap the speed of a frame at specified MIN_FRAME_DURATION (0.18 = 0.18s)
 USE_MIN_FRAME_DURATION = True
@@ -106,7 +106,7 @@ def add_text_to_frame(
     draw.text((center_x, center_y), text, font=font, fill=text_color)
 
     if logo:
-        bereal_font = ImageFont.truetype(FONT_PATH, 50)
+        bereal_font = ImageFont.truetype(BEREAL_LOGO_FONT_PATH, 50)
         draw.text((center_x+215, center_y+842), "BeReal.", font=bereal_font, fill=(255, 255, 255))
 
     # Convert Pillow Image back to OpenCV frame
@@ -129,7 +129,6 @@ def generate_video(image_folder, output_path, frames_per_second, t_duration):
     for i in range(len(images)):
         t = i / len(images)
         bc = bezier_curve(t, 2.0, 0.4, 0.3, 0.9)
-        # print(bc)
         durations.append(bc)
     total_duration = np.sum(durations)
     normalized_durations = [
@@ -206,7 +205,6 @@ def generate_video(image_folder, output_path, frames_per_second, t_duration):
     new_normalized_durations[-1] = new_normalized_durations[-1]
 
     if USE_MIN_FRAME_DURATION == True:
-        print("new normalized")
         normalizations = [MIN_FRAME_DURATION if ele < MIN_FRAME_DURATION else ele for ele in new_normalized_durations]
         new_normalized_durations = normalizations
 
