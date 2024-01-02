@@ -1,14 +1,14 @@
 <a name="readme-top"></a>
 
-![Welcome Screen](https://github.com/theOneAndOnlyOne/BeReel/blob/main/static/images/BeReal_Header.png)
-
 # Fork Note:
 
 Forked from https://github.com/theOneAndOnlyOne/BeReel and edited to make it more like 2022. Globals are stored in recap.py. Once Authenticated, edit the globals and click the "2023 Recap" button
 
 ----------
 
-# BeReel:
+![Welcome Screen](https://github.com/theOneAndOnlyOne/BeReel/blob/main/static/images/BeReal_Header.png)
+
+## BeReel:
 
 Miss the Timelapse Recap feature from ReReal? Introducing BeReel. A Flask-based webtool that gives you a customized timelapse of your favourite BeReal memories. 
 
