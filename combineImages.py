@@ -5,6 +5,7 @@ import os
 
 OUTLINE_PATH = f"static{os.path.sep}images{os.path.sep}secondary_image_outline.png"
 FONT_PATH = rf"static{os.path.sep}fonts{os.path.sep}Inter-Bold.ttf"
+RECAP_FONT_PATH = rf"static{os.path.sep}fonts{os.path.sep}tusker-grotesk-6700-bold.ttf"
 
 
 def process_image(primary_filename, primary_folder, secondary_folder, output_folder):
@@ -19,7 +20,7 @@ def process_image(primary_filename, primary_folder, secondary_folder, output_fol
     # Check if there's a corresponding file in the secondary folder with the same prefix
     secondary_files = [
         file for file in os.listdir(secondary_folder) if file.startswith(primary_prefix)
-    ]
+    ] 
     if secondary_files:
         # Use the first matching file in the secondary folder
         secondary_filename = secondary_files[0]
@@ -69,13 +70,14 @@ def process_image(primary_filename, primary_folder, secondary_folder, output_fol
         rect_height = text_bbox[3] + 20  # Add some padding
 
         # Draw a semi-transparent filled rectangle as the background
-        draw.rectangle(
-            [(x - 30, y - 15), (x + rect_width + 10, y + rect_height + 10)],
-            fill=(0, 0, 0, text_opacity),
-        )
+        # draw.rectangle(
+        #     [(x - 30, y - 15), (x + rect_width + 10, y + rect_height + 10)],
+        #     fill=(0, 0, 0, text_opacity),
+        # )
 
         # Draw the text on the image
-        draw.text((x, y), date, font=font, fill="white")
+        draw.text((x, y), date, font=font, fill=(255, 255, 255, text_opacity))
+        draw.text((x+68, y-55), "BeReal.", font=font, fill=(255, 255, 255, text_opacity))
         # Save the modified image
 
         # Save the result in the output folder
